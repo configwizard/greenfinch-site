@@ -42,6 +42,12 @@ p.atmIntroduction {
 	line-height: 1.2;
 }
 
+p.atmDisclaimer {
+    font-size: 0.8rem;
+    margin-top: 2rem;
+    margin-bottom: 0;
+}
+
 @media (min-width: 768px) {
 	p.atmIntroduction {
 		font-size: 1.3rem;
