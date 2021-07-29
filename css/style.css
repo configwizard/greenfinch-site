@@ -21,7 +21,21 @@ body {
 
 /* Layout: General */
 header {
-	margin-top: 20px;
+    padding: 10px 20px;
+}
+
+header a.link {
+    color: rgba(27,20,100,1);
+    transition: 0.3s;
+    padding: 5px 10px;
+    border-radius: 2px;
+    background-color: rgba(0,0,0,0.05);
+}
+
+header a.link:hover {
+    color: rgba(27,20,100,1);
+    text-decoration: none;
+    background-color: rgba(0,0,0,0.1);
 }
 
 footer {
