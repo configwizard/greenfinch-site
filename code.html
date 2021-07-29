@@ -1,192 +1,183 @@
 <html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>EncryptEasy - PGP Encryption Tool</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css?v=1.0.1">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>EncryptEasy - PGP Encryption Tool</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css?v=1.0.1">
 
-    <script src="https://kit.fontawesome.com/ce1b9875f8.js" crossorigin="anonymous"></script>
-	<link rel="stylesheet"
-		  href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/styles/default.min.css">
-	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js"></script>
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+        <script src="https://kit.fontawesome.com/ce1b9875f8.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet"
+            href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/styles/default.min.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js"></script>
+        <link rel="icon" type="image/x-icon" href="favicon.ico" />
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FJWDSV14SW"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-FJWDSV14SW"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-        gtag('config', 'G-FJWDSV14SW');
-    </script>
+            gtag('config', 'G-FJWDSV14SW');
+        </script>
+    </head>
+    <body>
+        <header></header>
+        <main class="text-center">
+            <section class="heroWelcome">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-sm-10 col-md-9">
+                            <figure>
+                                <img src="images/logo-encrypteasy-v2.png" alt="Logo - Encrypteasy">
+                            </figure>
+                            <h1>Encryption Code</h1>
+                            <p class="atmIntroduction">This is the code that EncryptEasy is using to inteface with the PGP encryption protocol.</p>
+                            
+                            <pre class="text-left">
+                                <code class="language-go">
+                                    package encryption
 
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-NQXDFN9');</script>
-    <!-- End Google Tag Manager -->
-</head>
-<body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NQXDFN9"
-                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-<header></header>
-<main class="text-center">
-    <section class="heroWelcome">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 col-sm-10 col-md-9">
-                    <figure>
-                        <img src="images/logo-encrypteasy-v2.png" alt="Logo - Encrypteasy">
-                    </figure>
-                    <h1>Encryption Code</h1>
-                    <p class="atmIntroduction">This is the code that EncryptEasy is using to inteface with the PGP encryption protocol.</p>
-                    <pre class="text-left"><code class="language-go">
-package encryption
+                                    import (
+                                        "bytes"
+                                        "crypto"
+                                        "fmt"
+                                        "github.com/alokmenghrajani/gpgeez"
+                                        "golang.org/x/crypto/openpgp"
+                                        "golang.org/x/crypto/openpgp/armor"
+                                        "golang.org/x/crypto/openpgp/packet"
+                                        "gorm.io/gorm"
+                                        "io/ioutil"
+                                        "log"
+                                        "strings"
+                                    )
+                                    type Encryption struct {
+                                        gorm.Model
+                                        KeyName string `gorm:"unique"`
+                                        PublicKey string
+                                        PrivateKey string
+                                        FingerPrint []byte
+                                        Selected bool
+                                    }
 
-import (
-	"bytes"
-	"crypto"
-	"fmt"
-	"github.com/alokmenghrajani/gpgeez"
-	"golang.org/x/crypto/openpgp"
-	"golang.org/x/crypto/openpgp/armor"
-	"golang.org/x/crypto/openpgp/packet"
-	"gorm.io/gorm"
-	"io/ioutil"
-	"log"
-	"strings"
-)
-type Encryption struct {
-	gorm.Model
-	KeyName string `gorm:"unique"`
-	PublicKey string
-	PrivateKey string
-	FingerPrint []byte
-	Selected bool
-}
+                                    // SaneDefaultConfig is a more secure default config than the defaults.
+                                    func ParanoidDefaultConfig() *packet.Config {
+                                        return &packet.Config{
+                                            DefaultHash:            crypto.SHA384,
+                                            DefaultCipher:          packet.CipherAES256,
+                                            DefaultCompressionAlgo: packet.CompressionZLIB,
+                                            CompressionConfig:      &packet.CompressionConfig{-1},
+                                        }
+                                    }
 
-// SaneDefaultConfig is a more secure default config than the defaults.
-func ParanoidDefaultConfig() *packet.Config {
-	return &packet.Config{
-		DefaultHash:            crypto.SHA384,
-		DefaultCipher:          packet.CipherAES256,
-		DefaultCompressionAlgo: packet.CompressionZLIB,
-		CompressionConfig:      &packet.CompressionConfig{-1},
-	}
-}
+                                    func ReadPGP(publicKey string) (string, []byte, error) {
+                                        entityList, err := openpgp.ReadArmoredKeyRing(strings.NewReader(publicKey))
+                                        if err != nil {
+                                            return "", nil, err
+                                        }
+                                        firstSubKey := entityList[0]
+                                        for k, _ := range firstSubKey.Identities {
+                                            fingerPrint := firstSubKey.PrimaryKey.Fingerprint[:]
+                                            return k, fingerPrint, nil
+                                        }
+                                        return "", nil, nil
+                                    }
+                                    // NewEntity creates a new entity. It doesn't provide an option for comments.
+                                    func NewEntity(name, email string) (string, string, error) {
+                                        config := gpgeez.Config{}
+                                        key, err := gpgeez.CreateKey(name, "", email, &config)
+                                        if err != nil {
+                                            fmt.Printf("Something went wrong: %v", err)
+                                            return "", "", err
+                                        }
+                                        publicOutput, err := key.Armor()
 
-func ReadPGP(publicKey string) (string, []byte, error) {
-	entityList, err := openpgp.ReadArmoredKeyRing(strings.NewReader(publicKey))
-	if err != nil {
-		return "", nil, err
-	}
-	firstSubKey := entityList[0]
-	for k, _ := range firstSubKey.Identities {
-		fingerPrint := firstSubKey.PrimaryKey.Fingerprint[:]
-		return k, fingerPrint, nil
-	}
-	return "", nil, nil
-}
-// NewEntity creates a new entity. It doesn't provide an option for comments.
-func NewEntity(name, email string) (string, string, error) {
-	config := gpgeez.Config{}
-	key, err := gpgeez.CreateKey(name, "", email, &config)
-	if err != nil {
-		fmt.Printf("Something went wrong: %v", err)
-		return "", "", err
-	}
-	publicOutput, err := key.Armor()
+                                        if err != nil {
+                                            fmt.Printf("Something went wrong: %v", err)
+                                            return "", "", err
+                                        }
+                                        privOutput, err := key.ArmorPrivate(&config)
+                                        if err != nil {
+                                            fmt.Printf("Something went wrong: %v", err)
+                                            return "", "", err
+                                        }
+                                        return privOutput, publicOutput, nil
+                                    }
+                                    func EncryptMessage(publicKey, message string) (string, error) {
+                                        pubEl, err := openpgp.ReadArmoredKeyRing(strings.NewReader(publicKey))
+                                        if err != nil {
+                                            return "", fmt.Errorf("Error Reading Public Keyring: %v", err)
+                                        }
 
-	if err != nil {
-		fmt.Printf("Something went wrong: %v", err)
-		return "", "", err
-	}
-	privOutput, err := key.ArmorPrivate(&config)
-	if err != nil {
-		fmt.Printf("Something went wrong: %v", err)
-		return "", "", err
-	}
-	return privOutput, publicOutput, nil
-}
-func EncryptMessage(publicKey, message string) (string, error) {
-	pubEl, err := openpgp.ReadArmoredKeyRing(strings.NewReader(publicKey))
-	if err != nil {
-		return "", fmt.Errorf("Error Reading Public Keyring: %v", err)
-	}
+                                        for _, v := range pubEl {
+                                            fmt.Printf("key by id %+v\r\n", v.Identities)
+                                        }
+                                        buf := new(bytes.Buffer)
 
-	for _, v := range pubEl {
-		fmt.Printf("key by id %+v\r\n", v.Identities)
-	}
-	buf := new(bytes.Buffer)
+                                        encoderWriter, err := armor.Encode(buf, "PGP Message", make(map[string]string))
+                                        if err != nil {
+                                            return "", fmt.Errorf("Error creating OpenPGP armor: %v", err)
+                                        }
 
-	encoderWriter, err := armor.Encode(buf, "PGP Message", make(map[string]string))
-	if err != nil {
-		return "", fmt.Errorf("Error creating OpenPGP armor: %v", err)
-	}
+                                        encryptorWriter, err := openpgp.Encrypt(encoderWriter, pubEl, nil, nil, nil)
+                                        if err != nil {
+                                            return "", fmt.Errorf("Error Encrypting Message: %v", err)
+                                        }
 
-	encryptorWriter, err := openpgp.Encrypt(encoderWriter, pubEl, nil, nil, nil)
-	if err != nil {
-		return "", fmt.Errorf("Error Encrypting Message: %v", err)
-	}
+                                        _, err = encryptorWriter.Write([]byte(message))
+                                        if err != nil {
+                                            return "", fmt.Errorf("Error writing data to encoder: %v", err)
+                                        }
 
-	_, err = encryptorWriter.Write([]byte(message))
-	if err != nil {
-		return "", fmt.Errorf("Error writing data to encoder: %v", err)
-	}
+                                        encryptorWriter.Close()
+                                        encoderWriter.Close()
 
-	encryptorWriter.Close()
-	encoderWriter.Close()
+                                        return string(buf.Bytes()), nil
+                                    }
 
-	return string(buf.Bytes()), nil
-}
+                                    func DecryptMessage(privateKey, privateKeyPassword, message string) (string, error) {
+                                        el, err := openpgp.ReadArmoredKeyRing(strings.NewReader(privateKey))
+                                        if err != nil {
+                                            return "", fmt.Errorf("Error Reading Keyring: %v", err)
+                                        }
 
-func DecryptMessage(privateKey, privateKeyPassword, message string) (string, error) {
-	el, err := openpgp.ReadArmoredKeyRing(strings.NewReader(privateKey))
-	if err != nil {
-		return "", fmt.Errorf("Error Reading Keyring: %v", err)
-	}
+                                        entity := el[0]
+                                        err = entity.PrivateKey.Decrypt([]byte(privateKeyPassword))
+                                        if err != nil {
+                                            return "", fmt.Errorf("Error decrypting PrivateKey: %v", err)
+                                        }
+                                        for _, subkey := range entity.Subkeys {
+                                            err = subkey.PrivateKey.Decrypt([]byte(privateKeyPassword))
+                                            if err != nil {
+                                                return "", fmt.Errorf("Error decrypting PrivateKey: %v", err)
+                                            }
+                                        }
 
-	entity := el[0]
-	err = entity.PrivateKey.Decrypt([]byte(privateKeyPassword))
-	if err != nil {
-		return "", fmt.Errorf("Error decrypting PrivateKey: %v", err)
-	}
-	for _, subkey := range entity.Subkeys {
-		err = subkey.PrivateKey.Decrypt([]byte(privateKeyPassword))
-		if err != nil {
-			return "", fmt.Errorf("Error decrypting PrivateKey: %v", err)
-		}
-	}
+                                        block, err := armor.Decode(strings.NewReader(message))
+                                        if err != nil {
+                                            return "", fmt.Errorf("Error decoding: %v", err)
+                                        }
 
-	block, err := armor.Decode(strings.NewReader(message))
-	if err != nil {
-		return "", fmt.Errorf("Error decoding: %v", err)
-	}
-
-	messageReader, err := openpgp.ReadMessage(block.Body, el, nil, nil)
-	if err != nil {
-		return "", fmt.Errorf("Error reading message: %v", err)
-	}
-	read, err := ioutil.ReadAll(messageReader.UnverifiedBody)
-	if err != nil {
-		return "", fmt.Errorf("Error reading unverified body: %v", err)
-	}
-	return string(read), nil
-}
-                    </code></pre>
+                                        messageReader, err := openpgp.ReadMessage(block.Body, el, nil, nil)
+                                        if err != nil {
+                                            return "", fmt.Errorf("Error reading message: %v", err)
+                                        }
+                                        read, err := ioutil.ReadAll(messageReader.UnverifiedBody)
+                                        if err != nil {
+                                            return "", fmt.Errorf("Error reading unverified body: %v", err)
+                                        }
+                                        return string(read), nil
+                                    }
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
-</main>
-<script>hljs.highlightAll();</script>
-<footer class="text-center">
-    <p>&copy; 2021 EncryptEasy. All rights reserved.
-</footer>
-</body>
+            </section>
+        </main>
+        <script>hljs.highlightAll();</script>
+        <footer class="text-center">
+            <p>&copy; 2021 EncryptEasy. All rights reserved.
+        </footer>
+    </body>
 </html>
