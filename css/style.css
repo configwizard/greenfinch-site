@@ -207,6 +207,14 @@ button:hover {
     color: #1b1464;
 }
 
+.page-content {
+    text-align: left;
+}
+
+.page-content p {
+    font-family: 'AvertaStdPERegular';
+}
+
 /* Footer */
 footer p {
 	color: rgba(27,20,100,1);
