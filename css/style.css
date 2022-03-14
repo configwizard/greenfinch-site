@@ -15,7 +15,7 @@
 
 body {
 	font-family: 'AvertaStdPESemibold', sans-serif;
-	background-color: #FAF9F3;
+	background-color: rgba(43,57,63,0.03);
 	color: #8e804c;
 }
 
@@ -74,10 +74,10 @@ p.atmDisclaimer {
 /* Layout: Sections */
 .heroWelcome {
 	padding: 80px 10px;
-	background-color: #edeadb;
+	background-color: rgba(43,57,63,0.06);
 	padding:50px;
 	margin-bottom: 20px;
-	color: #1b1464;
+	color: #2b393f;
 }
 
 @media (min-width: 768px) {
@@ -98,7 +98,7 @@ p.atmDisclaimer {
 .keyAttributes {
 	padding:50px;
 	margin-bottom: 20px;
-	background-color: #f6f4ed; /* 50% of background-color above */
+	background-color: rgba(43,57,63,0.03);
 }
 
 @media(min-width: 768px) {
@@ -126,6 +126,7 @@ p.atmDisclaimer {
 
 @media(min-width: 768px) {
 	.atmAttribute {
+        color: #2b393f;
 		margin-bottom: 40px;
 	}
 	.atmAttribute:nth-child(3) {
@@ -134,25 +135,15 @@ p.atmDisclaimer {
 	.atmAttribute:nth-child(4) {
 		margin-bottom:0;
 	}
+    .atmAttribute i {
+        color: #00af92;
+    }
 }
 
 @media(min-width: 992px) {
 	.atmAttribute {
 		margin-bottom: 0;
 	}
-}
-
-.brandColorGenerated { 
-	color: #4154b3;
-}
-.brandColorImported {
-	color: #7544a5;
-}
-.brandColorEncrypt {
-	color: #049ba0;
-}
-.brandColorDecrypt {
-	color: #d60a78;
 }
 
 /* Button */
@@ -162,8 +153,8 @@ button {
 	font-size: 1rem;
 	border: none;
 	box-shadow: 0 5px 5px rgba(0,0,0,0.2);
-	background: rgba(27,20,100,1);
-	background: linear-gradient(135deg, rgba(4,155,160,1) 0%, rgba(27,20,100,1) 20%, rgba(27,20,100,1) 80%, rgba(214,10,120,1) 100%);;
+	background: rgba(43,57,63,1);
+	background: linear-gradient(135deg, rgba(0,229,153,1) 0%, rgba(43,57,63,1) 15%, rgba(43,57,63,1) 85%, rgba(0,175,146,1) 100%);
 	color: white;
 	margin-top: 5px;
 	padding:7px 25px;
@@ -176,8 +167,8 @@ button i {
 
 button:hover {
 	cursor: pointer;
-	background: rgba(27,20,100,1);
-	background: linear-gradient(135deg, rgba(4,155,160,1) 0%, rgba(27,20,100,1) 20%, rgba(27,20,100,1) 80%, rgba(214,10,120,1) 100%);;
+	background: rgba(43,57,63,1);
+	background: linear-gradient(135deg, rgba(0,229,153,1) 0%, rgba(43,57,63,1) 15%, rgba(43,57,63,1) 85%, rgba(0,175,146,1) 100%);
 
 }
 
@@ -192,19 +183,19 @@ button:hover {
 
 .keyEmail p {
     font-size: 1.05rem;
-    color: #1b1464;
+    color: #2b393f;
 }
 
 .keyEmail i {
-    color: #049ba0;
+    color: #5865F2; /* Discord blue */
 }
 
 .keyEmail a {
-    color: #d60a78;
+    color: #00E599;
 }
 
 .keyEmail a:hover {
-    color: #1b1464;
+    color: #2b393f;
 }
 
 .page-content {
@@ -217,6 +208,6 @@ button:hover {
 
 /* Footer */
 footer p {
-	color: rgba(27,20,100,1);
+	color: #2b393f;
 	font-size: 0.8rem;
 }
