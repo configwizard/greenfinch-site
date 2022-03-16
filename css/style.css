@@ -15,8 +15,8 @@
 
 body {
 	font-family: 'AvertaStdPESemibold', sans-serif;
-	background-color: rgba(43,57,63,0.03);
-	color: #8e804c;
+	background-color: #f0f5f6;
+	color: #2b393f;
 }
 
 /* Layout: General */
@@ -74,9 +74,8 @@ p.atmDisclaimer {
 /* Layout: Sections */
 .heroWelcome {
 	padding: 80px 10px;
-	background-color: rgba(43,57,63,0.06);
+	background-color: rgba(0, 0, 0, 0.02);
 	padding:50px;
-	margin-bottom: 20px;
 	color: #2b393f;
 }
 
@@ -90,15 +89,14 @@ p.atmDisclaimer {
 	padding:30px 10px;
 	margin-bottom: 20px;
 }
+
 .heroScreenshot img {
-	border-radius: 5px;
-	border: 2px solid #f6f4ed;
-	box-shadow: 0 0 12px rgba(0,0,0,0.2);
 }
+
 .keyAttributes {
 	padding:50px;
 	margin-bottom: 20px;
-	background-color: rgba(43,57,63,0.03);
+	background-color: rgba(0, 0, 0, 0.03);
 }
 
 @media(min-width: 768px) {
@@ -184,6 +182,10 @@ button:hover {
 .keyEmail p {
     font-size: 1.05rem;
     color: #2b393f;
+}
+
+.keyEmail p strong {
+    font-family: 'AvertaStdPEBold', sans-serif;
 }
 
 .keyEmail i {
