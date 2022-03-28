@@ -3,7 +3,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>Greenfinch - Decentralized file storage</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<link rel="stylesheet" href="css/style.css?v=1.0.1">
+	<link rel="stylesheet" href="css/style.css?v=1.0.2">
+	<link rel="stylesheet" href="css/discord.css">
 
 	<script src="https://kit.fontawesome.com/6b4fb8a528.js" crossorigin="anonymous"></script>
 
@@ -92,6 +93,9 @@
                         <i class="fa-brands fa-3x fa-discord"></i>
                         <p>How can we improve Greenfinch? Find us on <a href="https://discord.gg/EeZtA2b7PQ" title="Greenfinch Discord" target="_blank">Discord</a>.</p>
                     </div>
+                    <div class="col-12">
+                    	<div id="discordInviteBox"></div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -99,5 +103,13 @@
 	<footer class="text-center">
 		<p>&copy; 2022 Greenfinch. All rights reserved.
 	</footer>
+	<script src="js/discord.js" type="text/javascript"></script>
+	<script>
+    	discordInvite.init({
+      		inviteCode: 'EeZtA2b7PQ',
+      		title: 'Greenfinch Support',
+    	});
+    	discordInvite.render();
+    </script>
 </body>
 </html>
