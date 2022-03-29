@@ -19,6 +19,17 @@ body {
 	color: #2b393f;
 }
 
+::-moz-selection {
+  color: #2b393f;
+  background: #00E599;
+}
+
+::selection {
+  color: #2b393f;
+  background: #00E599;
+}
+
+
 /* Layout: General */
 header {
     padding: 10px 20px;
