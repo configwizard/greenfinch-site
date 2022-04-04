@@ -80,13 +80,24 @@ p.atmDisclaimer {
 	}
 }
 
+span.atmUC {
+	line-height: 2;
+	font-size: 0.8rem;
+	text-transform: uppercase;
+	font-family: 'AvertaStdPEBold';
+	letter-spacing: 0.1em;
+}
+
+.atmPhase {
+	margin: 10px 0;
+	padding: 0 20px;
+}
 
 
 /* Layout: Sections */
 .heroWelcome {
-	padding: 80px 10px;
+	padding: 40px 10px;
 	background-color: rgba(0, 0, 0, 0.02);
-	padding:50px;
 	color: #2b393f;
 }
 
@@ -96,18 +107,18 @@ p.atmDisclaimer {
 	}
 }
 
+.keyAttributes {
+	padding: 40px 10px;
+	margin-bottom: 20px;
+	background-color: rgba(0, 0, 0, 0.03);
+}
+
 .heroScreenshot {
-	padding:30px 10px;
+	padding: 40px 10px;
 	margin-bottom: 20px;
 }
 
 .heroScreenshot img {
-}
-
-.keyAttributes {
-	padding:50px;
-	margin-bottom: 20px;
-	background-color: rgba(0, 0, 0, 0.03);
 }
 
 @media(min-width: 768px) {
