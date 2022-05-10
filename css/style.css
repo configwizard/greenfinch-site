@@ -210,8 +210,12 @@ button:hover {
     font-family: 'AvertaStdPEBold', sans-serif;
 }
 
-.keyEmail i {
+.keyEmail i.fa-discord {
     color: #5865F2; /* Discord blue */
+}
+
+.keyEmail i.fa-github {
+	color: #24292f;
 }
 
 .keyEmail a {
