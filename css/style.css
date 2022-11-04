@@ -114,8 +114,7 @@ span.atmUC {
 }
 
 .heroScreenshot {
-	padding: 40px 10px;
-	margin-bottom: 20px;
+	padding: 30px 10px;
 }
 
 .heroScreenshot img {
@@ -132,6 +131,15 @@ span.atmUC {
 	}
 }
 
+.heroDonate {
+	margin-bottom: 60px;
+
+}
+
+.heroDonate img {
+	margin-top: 20px;
+	box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+}
 
 /* Key Attributes */
 .atmAttribute {
@@ -214,7 +222,11 @@ button:hover {
     color: #5865F2; /* Discord blue */
 }
 
-.keyEmail i.fa-github {
+.keyEmail i.fa-twitter {
+    color: #1D9BF0; /* Twitter blue */
+}
+
+.keyEmail i.fa-github { /* GitHub gray  */
 	color: #24292f;
 }
 
