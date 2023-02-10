@@ -21,7 +21,7 @@ body {
 
 ::-moz-selection {
   color: #2b393f;
-  background: #00E599;
+  background: #00E599; 
 }
 
 ::selection {
