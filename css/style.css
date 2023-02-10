@@ -107,6 +107,14 @@ span.atmUC {
 	}
 }
 
+.heroWelcome a {
+	color: #00af92;
+}
+
+.heroWelcome a:hover {
+	color: #2b393f;
+}
+
 .keyAttributes {
 	padding: 40px 10px;
 	margin-bottom: 20px;
@@ -200,6 +208,7 @@ button:hover {
 
 }
 
+/*
 @media (min-width: 768px) {
 	button {
 		font-size: 1.2rem;
@@ -208,6 +217,14 @@ button:hover {
 		transform: scale(1.1);
 	}
 }
+*/
+
+button.atmInactive {
+	opacity: 0.3;
+	cursor: not-allowed!important;
+}
+
+
 
 .keyEmail p {
     font-size: 1.05rem;
@@ -231,7 +248,7 @@ button:hover {
 }
 
 .keyEmail a {
-    color: #00E599;
+    color: #00af92;
 }
 
 .keyEmail a:hover {
@@ -245,6 +262,44 @@ button:hover {
 .page-content p {
     font-family: 'AvertaStdPERegular';
 }
+
+/* Countdown */
+.blockCountdown {
+	margin-top: 30px;
+	margin-bottom: 40px;
+}
+
+
+
+
+.blockTime {
+	width: 25%;
+	padding: 20px 10px;
+	margin: 0 10px;
+	text-align: center;
+	font-weight: bold;
+	background-color: rgba(0,0,0,0.05);
+}
+
+.blockTime:first-child {
+	margin-left: 0;
+}
+
+.blockTime:last-child {
+	margin-right: 0;
+}
+
+span.large {
+	font-size: 48px;
+	line-height:1;
+}
+
+span.type {
+	font-size:12px;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+}
+
 
 /* Footer */
 footer p {
