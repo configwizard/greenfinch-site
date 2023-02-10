@@ -271,11 +271,10 @@ button.atmInactive {
 
 
 
-
 .blockTime {
 	width: 25%;
 	padding: 20px 10px;
-	margin: 0 10px;
+	margin: 0 5px;
 	text-align: center;
 	font-weight: bold;
 	background-color: rgba(0,0,0,0.05);
