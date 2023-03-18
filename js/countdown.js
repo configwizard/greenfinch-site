@@ -4,7 +4,7 @@
         hour = minute * 60,
         day = hour * 24;
 
-  let roundone = "March 14, 2023 15:59:00",
+  let roundone = "March 24, 2023 15:59:00",
       countDown = new Date(roundone).getTime(),
       x = setInterval(function() {    
 
