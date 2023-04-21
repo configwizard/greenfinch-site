@@ -1,0 +1,346 @@
+@import url("//hello.myfonts.net/count/3e7d84");
+
+@font-face {
+    font-family: 'AvertaStdPERegular';
+    src: url('fonts/AvertaStdPERegular/font.woff2') format('woff2'), url('fonts/AvertaStdPERegular/font.woff') format('woff');
+}
+@font-face {
+    font-family: 'AvertaStdPESemibold';
+    src: url('fonts/AvertaStdPESemibold/font.woff2') format('woff2'), url('fonts/AvertaStdPESemibold/font.woff') format('woff');
+}
+@font-face {
+    font-family: 'AvertaStdPEBold';
+    src: url('fonts/AvertaStdPEBold/font.woff2') format('woff2'), url('fonts/AvertaStdPEBold/font.woff') format('woff');
+}
+
+body {
+	font-family: 'AvertaStdPESemibold', sans-serif;
+	background-color: #f0f5f6;
+	color: #2b393f;
+}
+
+::-moz-selection {
+  color: #2b393f;
+  background: #00E599; 
+}
+
+::selection {
+  color: #2b393f;
+  background: #00E599;
+}
+
+
+/* Layout: General */
+
+
+figure {
+	margin: 0;
+	padding:0;
+}
+
+h1 {
+	margin-top: 20px;
+}
+
+p.atmIntroduction {
+	font-size: 1.1rem;
+	line-height: 1.2;
+}
+
+p.atmDisclaimer {
+    font-size: 0.8rem;
+    margin-top: 2rem;
+    margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+	p.atmIntroduction {
+		font-size: 1.3rem;
+		line-height: 1.3;
+	}
+}
+
+span.atmUC {
+	line-height: 2;
+	font-size: 0.8rem;
+	text-transform: uppercase;
+	font-family: 'AvertaStdPEBold';
+	letter-spacing: 0.1em;
+}
+
+.atmPhase {
+	margin: 10px 0;
+	padding: 0 20px;
+}
+
+
+/* Layout: Sections */
+.heroWelcome {
+	padding: 40px 10px;
+	background-color: rgba(0, 0, 0, 0.02);
+	color: #2b393f;
+}
+
+@media (min-width: 768px) {
+	.heroWelcome {
+		padding: 80px 40px;
+	}
+}
+
+.heroWelcome a {
+	color: #00af92;
+}
+
+.heroWelcome a:hover {
+	color: #2b393f;
+}
+
+.keyAttributes {
+	padding: 40px 10px;
+	margin-bottom: 20px;
+	background-color: rgba(0, 0, 0, 0.03);
+}
+
+.heroScreenshot {
+	padding: 30px 10px;
+}
+
+.heroScreenshot img {
+}
+
+@media(min-width: 768px) {
+	.heroScreenshot img {
+		border: 3px solid #f6f4ed;
+	}
+}
+@media(min-width: 992px) {
+	.heroScreenshot img {
+		border: 4px solid #f6f4ed;
+	}
+}
+
+
+
+/* Key Attributes */
+.atmAttribute {
+	margin-bottom: 40px;
+}
+.atmAttribute:last-child {
+	margin-bottom:0;
+}
+.atmAttribute p {
+	margin-bottom: 0;
+}
+
+@media(min-width: 768px) {
+	.atmAttribute {
+        color: #2b393f;
+		margin-bottom: 40px;
+	}
+	.atmAttribute:nth-child(3) {
+		margin-bottom:0;
+	}
+	.atmAttribute:nth-child(4) {
+		margin-bottom:0;
+	}
+    .atmAttribute i {
+        color: #00af92;
+    }
+}
+
+@media(min-width: 992px) {
+	.atmAttribute {
+		margin-bottom: 0;
+	}
+}
+
+
+
+/*
+@media (min-width: 768px) {
+	button {
+		font-size: 1.2rem;
+	}
+	button:hover {
+		transform: scale(1.1);
+	}
+}
+*/
+
+button.atmInactive {
+	opacity: 0.3;
+	cursor: not-allowed!important;
+}
+
+.page-content {
+    text-align: left;
+}
+
+.page-content p {
+    font-family: 'AvertaStdPERegular';
+}
+
+/* Countdown */
+.blockCountdown {
+	margin-top: 30px;
+	margin-bottom: 40px;
+}
+
+.blockTime {
+	width: 25%;
+	padding: 20px 10px;
+	margin: 0 5px;
+	text-align: center;
+	font-weight: bold;
+	background-color: rgba(0,0,0,0.05);
+}
+
+.blockTime:first-child {
+	margin-left: 0;
+}
+
+.blockTime:last-child {
+	margin-right: 0;
+}
+
+span.large {
+	font-size: 48px;
+	line-height:1;
+}
+
+span.type {
+	font-size:12px;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+}
+
+
+
+/* Section: Header */
+header {
+	position: relative;
+	z-index: 50;
+	box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    padding: 10px 0;
+    margin-bottom: 40px;
+    color: #fff;
+	background-color: #2b393f;
+}
+
+header a.link {
+    color: rgba(27,20,100,1);
+    transition: 0.3s;
+    padding: 5px 10px;
+    border-radius: 2px;
+    background-color: rgba(0,0,0,0.05);
+}
+
+header a.link:hover {
+    color: rgba(27,20,100,1);
+    text-decoration: none;
+    background-color: rgba(0,0,0,0.1);
+}
+
+
+/* Section: Download */
+.sectionDownload {
+	padding: 20px 0; 
+}
+
+.sectionDownload a.atmButton {
+	transition: transform .3s;
+	font-family: 'AvertaStdPERegular', sans-serif;
+	font-size: 1.1rem;
+	border: none;
+	box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+	background: rgba(43,57,63,1);
+	background: linear-gradient(135deg, rgba(0,229,153,1) 0%, rgba(43,57,63,1) 15%, rgba(43,57,63,1) 85%, rgba(0,175,146,1) 100%);
+	color: white;
+	margin-top: 5px;
+	padding: 10px 30px;
+	border-radius: 5px;
+}
+.sectionDownload a.atmButton:hover {
+	cursor: pointer;
+	background: rgba(43,57,63,1);
+	background: linear-gradient(135deg, rgba(0,229,153,1) 0%, rgba(43,57,63,1) 15%, rgba(43,57,63,1) 85%, rgba(0,175,146,1) 100%);
+}
+
+.sectionDownload a.atmButton i {
+	margin-right: 10px;
+}
+
+
+/* Section: Splide (Slider) */
+.sectionSplide {
+	padding: 20px 0; 
+	margin-bottom: 40px;
+}
+
+
+/* Section: Donate */
+.sectionDonate {
+	padding: 20px 0; 
+	margin-bottom: 40px;
+}
+
+.sectionDonate img {
+	margin-top: 20px;
+	box-shadow: 0 3px 7px rgba(0,0,0,0.2);
+}
+
+.sectionDonate p.atmWallet {
+	font-size: 1.1rem;
+}
+
+
+/* Section: Footer */
+footer {
+	font-family: 'AvertaStdPERegular', sans-serif;
+	padding: 30px 0;
+	padding-top: 50px;
+	color: #fff;
+	background-color: #2b393f;;
+}
+
+footer .col {
+	text-align:center;
+}
+
+footer p {
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+footer p.atmCopyright {
+	font-size: 0.9rem;
+	color: rgba(255,255,255,0.5);
+}
+
+footer p strong {
+    font-family: 'AvertaStdPESemiBold', sans-serif;
+}
+
+footer i.fa-discord {
+	margin: 5px 0;
+    color: #5865F2; /* Discord blue */
+}
+
+footer i.fa-twitter {
+	margin: 5px 0;
+    color: #1D9BF0; /* Twitter blue */
+}
+
+footer i.fa-github { 
+	margin: 5px 0;
+	color: #fff; /* GitHub white */
+}
+
+footer a {
+	transition: 0.3s;
+    color: #00af92;
+}
+
+footer a:hover {
+    color: #fff;
+}
