@@ -29,29 +29,16 @@ body {
   background: #00E599;
 }
 
+/* reponsive
+576px
+768px
+992px
+1200px
+1400px
+*/
 
 /* Layout: General */
-header {
-    padding: 10px 20px;
-}
 
-header a.link {
-    color: rgba(27,20,100,1);
-    transition: 0.3s;
-    padding: 5px 10px;
-    border-radius: 2px;
-    background-color: rgba(0,0,0,0.05);
-}
-
-header a.link:hover {
-    color: rgba(27,20,100,1);
-    text-decoration: none;
-    background-color: rgba(0,0,0,0.1);
-}
-
-footer {
-	margin: 10px 0;
-}
 
 figure {
 	margin: 0;
@@ -62,22 +49,10 @@ h1 {
 	margin-top: 20px;
 }
 
-p.atmIntroduction {
-	font-size: 1.1rem;
-	line-height: 1.2;
-}
-
 p.atmDisclaimer {
     font-size: 0.8rem;
     margin-top: 2rem;
     margin-bottom: 0;
-}
-
-@media (min-width: 768px) {
-	p.atmIntroduction {
-		font-size: 1.3rem;
-		line-height: 1.3;
-	}
 }
 
 span.atmUC {
@@ -93,40 +68,10 @@ span.atmUC {
 	padding: 0 20px;
 }
 
-
-/* Layout: Sections */
-.heroWelcome {
-	padding: 40px 10px;
-	background-color: rgba(0, 0, 0, 0.02);
-	color: #2b393f;
-}
-
-@media (min-width: 768px) {
-	.heroWelcome {
-		padding: 80px 40px;
-	}
-}
-
-.heroWelcome a {
-	color: #00af92;
-}
-
-.heroWelcome a:hover {
-	color: #2b393f;
-}
-
-.keyAttributes {
-	padding: 40px 10px;
-	margin-bottom: 20px;
-	background-color: rgba(0, 0, 0, 0.03);
-}
-
 .heroScreenshot {
 	padding: 30px 10px;
 }
 
-.heroScreenshot img {
-}
 
 @media(min-width: 768px) {
 	.heroScreenshot img {
@@ -139,121 +84,6 @@ span.atmUC {
 	}
 }
 
-.heroDonate {
-	margin-bottom: 60px;
-
-}
-
-.heroDonate img {
-	margin-top: 20px;
-	box-shadow: 0 5px 5px rgba(0,0,0,0.1);
-}
-
-/* Key Attributes */
-.atmAttribute {
-	margin-bottom: 40px;
-}
-.atmAttribute:last-child {
-	margin-bottom:0;
-}
-.atmAttribute p {
-	margin-bottom: 0;
-}
-
-@media(min-width: 768px) {
-	.atmAttribute {
-        color: #2b393f;
-		margin-bottom: 40px;
-	}
-	.atmAttribute:nth-child(3) {
-		margin-bottom:0;
-	}
-	.atmAttribute:nth-child(4) {
-		margin-bottom:0;
-	}
-    .atmAttribute i {
-        color: #00af92;
-    }
-}
-
-@media(min-width: 992px) {
-	.atmAttribute {
-		margin-bottom: 0;
-	}
-}
-
-/* Button */
-button {
-	transition: transform .3s;
-	font-family: 'AvertaStdPERegular', sans-serif;
-	font-size: 1rem;
-	border: none;
-	box-shadow: 0 5px 5px rgba(0,0,0,0.2);
-	background: rgba(43,57,63,1);
-	background: linear-gradient(135deg, rgba(0,229,153,1) 0%, rgba(43,57,63,1) 15%, rgba(43,57,63,1) 85%, rgba(0,175,146,1) 100%);
-	color: white;
-	margin-top: 5px;
-	padding:7px 25px;
-	border-radius: 5px;
-}
-
-button i {
-	margin-right: 10px;
-}
-
-button:hover {
-	cursor: pointer;
-	background: rgba(43,57,63,1);
-	background: linear-gradient(135deg, rgba(0,229,153,1) 0%, rgba(43,57,63,1) 15%, rgba(43,57,63,1) 85%, rgba(0,175,146,1) 100%);
-
-}
-
-/*
-@media (min-width: 768px) {
-	button {
-		font-size: 1.2rem;
-	}
-	button:hover {
-		transform: scale(1.1);
-	}
-}
-*/
-
-button.atmInactive {
-	opacity: 0.3;
-	cursor: not-allowed!important;
-}
-
-
-
-.keyEmail p {
-    font-size: 1.05rem;
-    color: #2b393f;
-}
-
-.keyEmail p strong {
-    font-family: 'AvertaStdPEBold', sans-serif;
-}
-
-.keyEmail i.fa-discord {
-    color: #5865F2; /* Discord blue */
-}
-
-.keyEmail i.fa-twitter {
-    color: #1D9BF0; /* Twitter blue */
-}
-
-.keyEmail i.fa-github { /* GitHub gray  */
-	color: #24292f;
-}
-
-.keyEmail a {
-    color: #00af92;
-}
-
-.keyEmail a:hover {
-    color: #2b393f;
-}
 
 .page-content {
     text-align: left;
@@ -268,8 +98,6 @@ button.atmInactive {
 	margin-top: 30px;
 	margin-bottom: 40px;
 }
-
-
 
 .blockTime {
 	width: 25%;
@@ -300,8 +128,258 @@ span.type {
 }
 
 
-/* Footer */
-footer p {
+
+/* Section: Header */
+header {
+	position: relative;
+	z-index: 50;
+	box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    padding: 10px 0;
+    color: #fff;
+	background-color: #2b393f;
+}
+
+header a.link {
+    color: rgba(27,20,100,1);
+    transition: 0.3s;
+    padding: 5px 10px;
+    border-radius: 2px;
+    background-color: rgba(0,0,0,0.05);
+}
+
+header a.link:hover {
+    color: rgba(27,20,100,1);
+    text-decoration: none;
+    background-color: rgba(0,0,0,0.1);
+}
+
+/* Layout: Sections */
+.sectionWelcome {
+	padding: 20px 0;
 	color: #2b393f;
-	font-size: 0.8rem;
+}
+
+@media (min-width: 768px) {
+	.sectionWelcome {
+		padding: 40px 0;
+	}
+}
+
+.sectionWelcome h1 {
+	font-size: 2.1rem;
+	margin-bottom: 15px;
+}
+.sectionWelcome a {
+	color: #00af92;
+}
+.sectionWelcome a:hover {
+	color: #2b393f;
+}
+.sectionWelcome p.atmIntroduction {
+	font-size: 1.2rem;
+	line-height: 1.3;
+}
+@media (min-width: 768px) {
+	.sectionWelcome p.atmIntroduction {
+		font-size: 1.3rem;
+		line-height: 1.5;
+	}
+}
+.sectionWelcome p {
+	font-size: 1.1rem;
+}
+
+
+/* Key Attributes */
+.sectionAttributes {
+	padding: 40px 10px;
+	margin-bottom: 20px;
+}
+.sectionAttributes .atmAttribute {
+	margin-bottom: 40px;
+}
+.sectionAttributes .atmAttribute:last-child {
+	margin-bottom:0;
+}
+.sectionAttributes .atmAttribute p {
+	margin-bottom: 0;
+}
+.sectionAttributes .atmAttribute i {
+	margin-bottom: 10px;
+}
+.sectionAttributes a {
+	transition: 0.3s;
+	color: #00af92;
+}
+.sectionAttributes a:hover {
+	color: #2b393f;
+}
+
+@media(min-width: 768px) {
+	.sectionAttributes .atmAttribute {
+        color: #2b393f;
+		margin-bottom: 40px;
+	}
+	.sectionAttributes .atmAttribute:nth-child(3) {
+		margin-bottom:0;
+	}
+	.sectionAttributes .atmAttribute:nth-child(4) {
+		margin-bottom:0;
+	}
+    .sectionAttributes .atmAttribute i {
+        color: #00af92;
+    }
+}
+
+@media(min-width: 992px) {
+	.sectionAttributes .atmAttribute {
+		margin-bottom: 0;
+	}
+}
+
+/* Section: Event */
+.sectionEvent {
+	padding: 20px 0; 
+	background-color: rgba(0, 0, 0, 0.03);
+}
+.sectionEvent h4 {
+	margin-top:10px;
+	margin-bottom:20px;
+}
+.sectionEvent p:last-child {
+	margin: 0;
+}
+.sectionEvent i {
+	margin-right: 10px;
+}
+.sectionEvent.container {
+	border-top: 1px solid red;
+}
+
+/* Section: Info */
+.sectionInfo {
+	padding: 20px 0; 
+	background-color: rgba(0, 0, 0, 0.03);
+}
+
+/* Section: Download */
+.sectionDownload {
+	padding: 40px 0; 
+}
+.sectionDownload h3 {
+	margin-bottom: 20px;
+}
+.sectionDownload a.atmDownload {
+	transition: transform .3s;
+	text-decoration: none;
+	font-family: 'AvertaStdPERegular', sans-serif;
+	font-size: 1.1rem;
+	border: none;
+	box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+	background: rgba(43,57,63,1);
+	background: linear-gradient(135deg, rgba(0,229,153,1) 0%, rgba(43,57,63,1) 15%, rgba(43,57,63,1) 85%, rgba(0,175,146,1) 100%);
+	color: white;
+	margin-top: 5px;
+	padding: 10px 30px;
+	border-radius: 5px;
+}
+.sectionDownload a.atmDownload:hover {
+	cursor: pointer;
+	background: rgba(43,57,63,1);
+	text-decoration: none;
+	background: linear-gradient(135deg, rgba(0,229,153,1) 0%, rgba(43,57,63,1) 15%, rgba(43,57,63,1) 85%, rgba(0,175,146,1) 100%);
+	box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+}
+.sectionDownload a.atmButton i {
+	margin-right: 10px;
+}
+.sectionDownload a.atmButton.atmInactive {
+	opacity: 0.3;
+	cursor: not-allowed!important;
+}
+@media (min-width: 768px) {
+	.sectionDownload a.atmDownload {
+		font-size: 1.1rem;
+	}
+	.sectionDownload a.atmDownload:hover {
+		transform: scale(1.1);
+	}
+}
+
+
+
+
+/* Section: Splide (Slider) */
+.sectionSplide {
+	background-color: rgba(0, 0, 0, 0.04);
+	padding-top: 30px;
+	padding-bottom: 20px; 
+}
+
+
+/* Section: Donate */
+.sectionDonate {
+	padding: 20px 0; 
+	margin-bottom: 40px;
+}
+
+.sectionDonate img {
+	margin-top: 20px;
+	box-shadow: 0 3px 7px rgba(0,0,0,0.2);
+}
+
+.sectionDonate p.atmWallet {
+	font-size: 1.1rem;
+}
+
+
+/* Section: Footer */
+footer {
+	font-family: 'AvertaStdPERegular', sans-serif;
+	padding: 30px 0;
+	padding-top: 50px;
+	color: #fff;
+	background-color: #2b393f;
+}
+
+footer .col {
+	text-align:center;
+}
+
+footer p {
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+footer p.atmCopyright {
+	font-size: 0.9rem;
+	color: rgba(255,255,255,0.5);
+}
+
+footer p strong {
+    font-family: 'AvertaStdPESemiBold', sans-serif;
+}
+
+footer i.fa-discord {
+	margin: 5px 0;
+    color: #5865F2; /* Discord blue */
+}
+
+footer i.fa-twitter {
+	margin: 5px 0;
+    color: #1D9BF0; /* Twitter blue */
+}
+
+footer i.fa-github { 
+	margin: 5px 0;
+	color: #fff; /* GitHub white */
+}
+
+footer a {
+	transition: 0.3s;
+    color: #00af92;
+}
+
+footer a:hover {
+    color: #fff;
 }
